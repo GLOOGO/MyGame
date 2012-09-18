@@ -7,6 +7,7 @@ namespace MyGame
     {
         private static void Main(string[] args)
         {
+            //Heyo
             List<Player> players = new List<Player>();
             string gameLength;
 
