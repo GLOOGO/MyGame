@@ -1,6 +1,6 @@
 *.exe
 *.dll
-*.sou
+*.suo
 _ReSharper.*/
 bin/
 Debug/
