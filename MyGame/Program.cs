@@ -7,7 +7,6 @@ namespace MyGame
     {
         private static void Main(string[] args)
         {
-            //Heyo
             List<Player> players = new List<Player>();
             string gameLength;
 
@@ -37,6 +36,8 @@ namespace MyGame
             {
                 Console.WriteLine(player.Name);
             }
+
+            Console.WriteLine("\n");
 
             int currentPlayerIndex = 0;
             bool isFirstTurn = true;
@@ -73,17 +74,25 @@ namespace MyGame
                 {
                     currentPlayerIndex++;
                 }
-                Console.WriteLine("Choose a card to place on the battlefield (number of card).");
-                PlaceCard(currentPlayer);
+
+                Console.WriteLine("Choose a card to play.");
                 Console.ReadLine();
+                ChooseCard();
+                Console.WriteLine("Does the card go on the Battlefield?");
+                Console.ReadLine();
+
+                PlaceCardBattlefield(currentPlayer);
+                
+                
             }
             Console.ReadLine();
         }
 
-        private static void PlaceCard(Player player)
+        private static void PlaceCardBattlefield(Player player)
         {
             int chosenCard = 1;
             player.Battlefield.AddRange((player.Hand.GetRange(1, ChooseCard(chosenCard))));
+            player.Hand.RemoveRange(1, chosenCard);
 
         }
 
