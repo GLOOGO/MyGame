@@ -22,6 +22,7 @@ namespace MyGame
                 player.Deck = GenerateRandomDeck();
                 player.Hand = new List<Card>(); 
                 player.Battlefield = new List<Card>(); 
+                player.DiscardPile = new List<Card>();
                 players.Add(player);
             }
 
@@ -71,14 +72,14 @@ namespace MyGame
                 Card chosenCard = ChooseCard(currentPlayer);
                 Console.WriteLine("You chose this card: " + chosenCard.CardType.ToString());
 
-                if (chosenCard.GoesOnBattlefield)
-                {
-                    PlaceCardBattlefield(currentPlayer, chosenCard);
-                }
+                PlaceCard(currentPlayer, chosenCard);
+                
                 Console.WriteLine("Here is your hand:");
                 DisplayCards(currentPlayer.Hand);
                 Console.WriteLine("Here is your Battlefield:");
                 DisplayCards(currentPlayer.Battlefield);
+                Console.WriteLine("Here is your discard pile:");
+                DisplayCards(currentPlayer.DiscardPile);
 
 
             }
@@ -97,9 +98,17 @@ namespace MyGame
             }
         } 
 
-        private static void PlaceCardBattlefield(Player player, Card card)
+        private static void PlaceCard(Player player, Card card)
         {
-            player.Battlefield.Add(card);
+            if (card.GoesOnBattlefield)
+            {
+                player.Battlefield.Add(card);
+            }
+            else
+            {
+                player.DiscardPile.Add(card);
+            }
+            
             player.Hand.Remove(card);
 
         }
