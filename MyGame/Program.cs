@@ -16,13 +16,9 @@ namespace MyGame
             for(int i = 1; i <= numberOfPlayers; i++)
             {
                 Console.WriteLine("Enter the name of Player {0}: ", i);
-                
+
                 Player player = new Player();
                 player.Name = Console.ReadLine();
-                player.Deck = GenerateRandomDeck();
-                player.Hand = new List<Card>(); 
-                player.Battlefield = new List<Card>(); 
-                player.DiscardPile = new List<Card>();
                 players.Add(player);
             }
 
@@ -30,7 +26,7 @@ namespace MyGame
             gameLength = Console.ReadLine();
 
 
-            Shuffle(players);
+            players.Shuffle();
 
             Console.WriteLine("The players will go in this order: ");
 
@@ -42,31 +38,16 @@ namespace MyGame
             Console.WriteLine("\n");
 
             int currentPlayerIndex = 0;
-            bool isFirstTurn = true;
             while (true)
             {
                 Player currentPlayer = players[currentPlayerIndex];
-                if (isFirstTurn)
-                {
-                    DrawCards(currentPlayer, 5);
-                }
-                else
-                {
-                    DrawCards(currentPlayer, 1);
-                }
+   currentPlayer.TakeTurn();
 
-
+                Console.WriteLine("Here is {0}'s hand:", currentPlayer.Name);
                 DisplayCards(currentPlayer.Hand);
 
-                if (currentPlayerIndex == players.Count - 1)
-                {
-                    isFirstTurn = false;
-                    currentPlayerIndex = 0;
-                }
-                else
-                {
-                    currentPlayerIndex++;
-                }
+             
+
 
                 Console.WriteLine("Choose a card to play.");
                 Card chosenCard = ChooseCard(currentPlayer);
@@ -76,11 +57,22 @@ namespace MyGame
                 
                 Console.WriteLine("Here is your hand:");
                 DisplayCards(currentPlayer.Hand);
+                Console.WriteLine("\n");
                 Console.WriteLine("Here is your Battlefield:");
                 DisplayCards(currentPlayer.Battlefield);
+                Console.WriteLine("\n");
                 Console.WriteLine("Here is your discard pile:");
                 DisplayCards(currentPlayer.DiscardPile);
+                Console.WriteLine("\n");
 
+                if (currentPlayerIndex == players.Count - 1)
+                {
+                    currentPlayerIndex = 0;
+                }
+                else
+                {
+                    currentPlayerIndex++;
+                }
 
             }
             Console.ReadLine();
@@ -118,12 +110,6 @@ namespace MyGame
             return currentPlayer.Hand[GetNumber() - 1];
         }
 
-        private static void DrawCards(Player player, int numberOfCardsToDraw)
-        {
-            player.Hand.AddRange(player.Deck.GetRange(0, numberOfCardsToDraw));
-            player.Deck.RemoveRange(0, numberOfCardsToDraw);
-        }
-
         private static void DisplayPlayerDecks(List<Player> players)
         {
             foreach (Player player in players)
@@ -138,52 +124,7 @@ namespace MyGame
             }
         }
 
-        private static List<Card> GenerateRandomDeck()
-        {
-            List<Card> deck = new List<Card>();
-
-            deck.Add(new Card(CardType.Hero, true));
-            deck.AddRange(GetCardsOfType(20, CardType.Basic, true));
-            deck.AddRange(GetCardsOfType(5, CardType.Magic, true));
-            deck.AddRange(GetCardsOfType(20, CardType.Action, false));
-            deck.AddRange(GetCardsOfType(16, CardType.Item, true));
-            deck.AddRange(GetCardsOfType(10, CardType.Spell, true));
-            deck.AddRange(GetCardsOfType(3, CardType.ElementalAura, true));
-            deck.AddRange(GetCardsOfType(3, CardType.PowerAura, true));
-            deck.AddRange(GetCardsOfType(3, CardType.ShadowAura, true));
-            deck.AddRange(GetCardsOfType(3, CardType.LightAura, true));
-            deck.AddRange(GetCardsOfType(3, CardType.TimeAura, true));
-            deck.AddRange(GetCardsOfType(3, CardType.SkillAura, true));
-
-            Shuffle(deck);
-
-            return deck;
-        }
-
-        private static void Shuffle<T>(List<T> list)
-        {
-            Random random = new Random();
-            int n = list.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = random.Next(n + 1);
-                T item = list[k];
-                list[k] = list[n];
-                list[n] = item;
-            }
-
-        }
-
-        private static List<Card> GetCardsOfType(int numberOfCards, CardType cardType, bool goesOnBattlefield)
-        {
-            List<Card> cards = new List<Card>();
-            for (int i = 0; i < numberOfCards; i++)
-            {
-                cards.Add(new Card(cardType, goesOnBattlefield));
-            }
-            return cards;
-        }
+       
 
         private static int GetNumber()
         {
