@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Basic.cs" />
     <Compile Include="Card.cs" />
+    <Compile Include="CardFactory.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Item.cs" />

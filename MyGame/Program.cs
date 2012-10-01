@@ -7,6 +7,7 @@ namespace MyGame
     {
         private static void Main(string[] args)
         {
+            
             List<Player> players = new List<Player>();
             string gameLength;
 
@@ -24,6 +25,7 @@ namespace MyGame
 
             Console.WriteLine("Enter the game length (short, long): ");
             gameLength = Console.ReadLine();
+            Console.WriteLine();
 
 
             players.Shuffle();
@@ -40,20 +42,67 @@ namespace MyGame
             int currentPlayerIndex = 0;
             while (true)
             {
+
                 Player currentPlayer = players[currentPlayerIndex];
-   currentPlayer.TakeTurn();
+                currentPlayer.TakeTurn();
+                int actionsLeft = 1;
+                int buysLeft = 1;
+
 
                 Console.WriteLine("Here is {0}'s hand:", currentPlayer.Name);
                 DisplayCards(currentPlayer.Hand);
 
-             
+                while ( actionsLeft + buysLeft > 0)
+                {
+                    Console.WriteLine("What would you like to do?");
+                    Console.WriteLine("1. Play a card.");
+                    Console.WriteLine("2. Buy a card.");
+                    Console.WriteLine("3. End Turn");
 
+                    int actionChoice = GetNumber();
 
-                Console.WriteLine("Choose a card to play.");
-                Card chosenCard = ChooseCard(currentPlayer);
-                Console.WriteLine("You chose this card: " + chosenCard.CardType.ToString());
+                    switch (actionChoice)
+                    {
+                        case 1:
+                            Console.WriteLine("Choose a card to play.");
+                            Card chosenCard = ChooseCard(currentPlayer);
+                            Console.WriteLine("You chose this card: " + chosenCard.CardType.ToString());
+                            PlaceCard(currentPlayer, chosenCard);
+                            actionsLeft--;
+                            break;
 
-                PlaceCard(currentPlayer, chosenCard);
+                            
+                        case 2:
+                            Console.WriteLine("What would you like to buy?");
+                            Console.WriteLine("1. Item");
+                            Console.WriteLine("2. Spell");
+                            Console.WriteLine("3. Action");
+                            int buyChoice = GetNumber();
+                            switch (buyChoice)
+                            {
+                                case 1:
+                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Item, true));
+                                    currentPlayer.Gems = currentPlayer.Gems - 5;
+                                    break;
+                                case 2:
+                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Magic, true));
+                                    currentPlayer.Gems = currentPlayer.Gems - 5;
+                                    break;
+                                case 3:
+                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Item, true));
+                                    currentPlayer.Gems = currentPlayer.Gems - 5;
+                                    break;
+
+                            }
+                            break;
+
+                    }
+                    
+                }
+
+               
+
+                
                 
                 Console.WriteLine("Here is your hand:");
                 DisplayCards(currentPlayer.Hand);
@@ -64,6 +113,12 @@ namespace MyGame
                 Console.WriteLine("Here is your discard pile:");
                 DisplayCards(currentPlayer.DiscardPile);
                 Console.WriteLine("\n");
+                
+                Console.WriteLine("Are you finished with your turn?");
+                Console.ReadLine();
+                currentPlayer.Gems++;
+
+
 
                 if (currentPlayerIndex == players.Count - 1)
                 {
