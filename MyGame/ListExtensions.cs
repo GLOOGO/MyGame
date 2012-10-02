@@ -18,6 +18,5 @@ namespace MyGame
                 list[n] = item;
             }
         }
- 
     }
 }

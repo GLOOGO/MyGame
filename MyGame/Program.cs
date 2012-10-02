@@ -20,6 +20,7 @@ namespace MyGame
 
                 Player player = new Player();
                 player.Name = Console.ReadLine();
+
                 players.Add(player);
             }
 
@@ -51,8 +52,8 @@ namespace MyGame
 
                 Console.WriteLine("Here is {0}'s hand:", currentPlayer.Name);
                 DisplayCards(currentPlayer.Hand);
-
-                while ( actionsLeft + buysLeft > 0)
+                var endTurn = false;
+                while ( actionsLeft + buysLeft > 0 && !endTurn)
                 {
                     Console.WriteLine("What would you like to do?");
                     Console.WriteLine("1. Play a card.");
@@ -81,28 +82,29 @@ namespace MyGame
                             switch (buyChoice)
                             {
                                 case 1:
-                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Item, true));
+                                    currentPlayer.Hand.Add(new Card(CardType.Item, true));
                                     currentPlayer.Gems = currentPlayer.Gems - 5;
                                     break;
                                 case 2:
-                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Magic, true));
+                                    currentPlayer.Hand.Add(new Card(CardType.Spell, true));
                                     currentPlayer.Gems = currentPlayer.Gems - 5;
                                     break;
                                 case 3:
-                                    currentPlayer.Hand.AddRange(currentPlayer.CardFactory.GetCardsOfType(1, CardType.Item, true));
+                                    currentPlayer.Hand.Add(new Card(CardType.Action, true));
                                     currentPlayer.Gems = currentPlayer.Gems - 5;
                                     break;
 
                             }
+                            buysLeft--;
+                            break;
+                        case 3:
+                            endTurn = true;
                             break;
 
                     }
                     
                 }
 
-               
-
-                
                 
                 Console.WriteLine("Here is your hand:");
                 DisplayCards(currentPlayer.Hand);
@@ -113,9 +115,6 @@ namespace MyGame
                 Console.WriteLine("Here is your discard pile:");
                 DisplayCards(currentPlayer.DiscardPile);
                 Console.WriteLine("\n");
-                
-                Console.WriteLine("Are you finished with your turn?");
-                Console.ReadLine();
                 currentPlayer.Gems++;
 
 

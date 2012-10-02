@@ -5,22 +5,17 @@ namespace MyGame
 {
     public class Player
     {
-        private List<Card> _deck = _cardFactory.GenerateRandomDeck();
+        private List<Card> _deck = MasterDecks.GetPlayerDeck();
         private List<Card> _hand = new List<Card>();
         private List<Card> _battlefield = new List<Card>();
         private List<Card> _discardPile = new List<Card>();
-        private static CardFactory _cardFactory = new CardFactory();
         private int _turnNumber = 0;
         private int _gems = 5;
 
         public string Name { get; set; }
 
         public int Gems { get; set; }
-        public CardFactory CardFactory
-        {
-            get { return _cardFactory; }
-            set { _cardFactory = value; }
-        }
+
         public List<Card> Deck
         {
             get { return _deck; }

@@ -43,13 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Basic.cs" />
+    <Compile Include="Ability.cs" />
+    <Compile Include="BasicMonster.cs" />
     <Compile Include="Card.cs" />
-    <Compile Include="CardFactory.cs" />
+    <Compile Include="MagicMonsters\Slime.cs" />
+    <Compile Include="MasterDecks.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="Magic.cs" />
+    <Compile Include="MagicMonster.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

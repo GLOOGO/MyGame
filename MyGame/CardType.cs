@@ -2,6 +2,6 @@
 {
     public enum CardType
     {
-        Hero, ElementalAura, PowerAura, ShadowAura, LightAura, TimeAura, SkillAura, Basic, Magic, Action, Item, Spell
+        Hero, ElementalAura, PowerAura, ShadowAura, LightAura, TimeAura, SkillAura, BasicMonster, MagicMonster, Action, Item, Spell, Quest, Mercenary, Boss
     }
 }
