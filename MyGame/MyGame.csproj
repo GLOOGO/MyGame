@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="AppliedSpecialCondition.cs" />
     <Compile Include="BasicMonster.cs" />
+    <Compile Include="BasicMonsters\CaptainFalcon.cs" />
     <Compile Include="Card.cs" />
-    <Compile Include="MagicMonsters\Slime.cs" />
+    <Compile Include="BasicMonsters\Slime.cs" />
     <Compile Include="MasterDecks.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="Hero.cs" />
@@ -59,6 +61,9 @@
     <Compile Include="SpecialCondition.cs" />
     <Compile Include="Spell.cs" />
     <Compile Include="Unit.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MagicMonsters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,7 @@ namespace MyGame
     {
         public string Name { get; set; }
         public int HealthPoints { get; set; }
-        public SpecialCondition[] SpecialCondition { get; set; }
+        public List<AppliedSpecialCondition> AppliedSpecialCondition { get; set; }
         public List<Ability> Abilities { get; set; }
 
         public Unit(string name, CardType cardType)
