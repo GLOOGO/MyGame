@@ -54,6 +54,7 @@
     <Compile Include="Hero.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="MagicMonster.cs" />
+    <Compile Include="Passive.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

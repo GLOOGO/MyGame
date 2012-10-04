@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using MyGame.MagicMonsters;
+using MyGame.BasicMonsters;
 
 namespace MyGame
 {
@@ -31,6 +31,7 @@ namespace MyGame
             startDeck.Add(new Slime());
             startDeck.Add(new Slime());
             startDeck.Add(new Slime());
+            startDeck.Add(new CaptainFalcon());
 
             startDeck.Shuffle();
 
