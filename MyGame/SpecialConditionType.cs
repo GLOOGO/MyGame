@@ -20,5 +20,6 @@ namespace MyGame
         DelayAttack,
         Freeze,
         Burn,
+        Bleed,
     }
 }

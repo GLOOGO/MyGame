@@ -17,6 +17,7 @@ namespace MyGame
         public readonly double SubAbilityChanceToAttackAgain;
         public readonly double SubAbilityChanceToCrit;
         public readonly int CritAmount;
+        public readonly bool IsTrueDamage;
 
         public SubAbility(
             bool canTargetAlly, 
@@ -31,7 +32,8 @@ namespace MyGame
             double subAbilityChanceToRepeat = 0, 
             double subAbilityChanceToAttackAgain= 0, 
             double subAbilityChanceToCrit = 0, 
-            int critAmount = 0)
+            int critAmount = 0, 
+            bool isTrueDamage = false)
         {
             CanTargetAlly = canTargetAlly;
             CanTargetEnemy = canTargetEnemy;
@@ -46,6 +48,7 @@ namespace MyGame
             SubAbilityChanceToAttackAgain = subAbilityChanceToAttackAgain;
             SubAbilityChanceToCrit = subAbilityChanceToCrit;
             CritAmount = critAmount;
+            IsTrueDamage = isTrueDamage;
         }
     }
 
