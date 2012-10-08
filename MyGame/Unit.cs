@@ -9,6 +9,7 @@ namespace MyGame
         public List<AppliedSpecialCondition> AppliedSpecialConditions { get; set; }
         public List<Ability> Abilities { get; set; }
 
+
         public Unit(string name, CardType cardType)
             : base(cardType, true)
         {
