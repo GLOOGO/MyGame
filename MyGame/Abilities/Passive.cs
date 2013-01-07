@@ -1,4 +1,4 @@
-﻿namespace MyGame
+namespace MyGame.Abilities
 {
     public class Passive
     {

@@ -1,4 +1,4 @@
-﻿namespace MyGame
+namespace MyGame.MagicMonsters
 {
     public class MagicMonster : Unit
     {

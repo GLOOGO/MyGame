@@ -1,6 +1,6 @@
-﻿namespace MyGame
+namespace MyGame.Abilities
 {
-    public class AppliedCondition
+    public class AppliedSpecialCondition
     {
         public SpecialCondition SpecialCondition { get; set; }
         public int TurnsRemaining;

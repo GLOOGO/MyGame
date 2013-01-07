@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MyGame.Abilities;
 
 namespace MyGame.BasicMonsters
 {
@@ -7,10 +8,10 @@ namespace MyGame.BasicMonsters
         public Slenderman() : base("Slenderman")
         {
             //TODO:Finish slenderman, unit is played differently; not technically a monster
-            HealthPoints = ;
-            SubAbility  = new SubAbility();
-            SubAbility  = new SubAbility();
-
+//            HealthPoints = ;
+//            SubAbility  = new SubAbility();
+//            SubAbility  = new SubAbility();
+//
             Abilities.Add(new Ability("", "", new List<SubAbility> {}));
             Abilities.Add(new Ability("", "", new List<SubAbility> {}));
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MyGame.Abilities;
 
 namespace MyGame.BasicMonsters
 {
@@ -7,8 +8,8 @@ namespace MyGame.BasicMonsters
         public Weaver () : base("Weaver")
         {
             HealthPoints = 7;
-            SubAbility damageReduction = new SubAbility();
-            SubAbility goBackTwoTurns = new SubAbility();
+//            SubAbility damageReduction = new SubAbility();
+//            SubAbility goBackTwoTurns = new SubAbility();
             SubAbility fourDamage = new SubAbility(true, true, 4, 0);
             //TODO:Abilities Missing, Finish Weaver
             Abilities.Add(new Ability("Shukuchi", "Weaver takes half damage, but only does half damage. Lasts until used again.", new List<SubAbility> {}));

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using MyGame.Abilities;
 
 namespace MyGame.BasicMonsters
 {
@@ -9,8 +10,8 @@ namespace MyGame.BasicMonsters
 
             HealthPoints = 1;
             //TODO:Finish Spy, Spy's Abilities are currently not supported
-            SubAbility  = new SubAbility();
-            SubAbility  = new SubAbility();
+//            SubAbility  = new SubAbility();
+//            SubAbility  = new SubAbility();
 
             Abilities.Add(new Ability("", "", new List<SubAbility> {}));
             Abilities.Add(new Ability("", "", new List<SubAbility> {}));
