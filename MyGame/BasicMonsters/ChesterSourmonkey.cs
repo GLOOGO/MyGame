@@ -8,12 +8,13 @@ namespace MyGame.BasicMonsters
         {
 
             HealthPoints = 8;
-            //TODO:Finish Chester Sourmoney, unable to use miss chances
-            SubAbility fourDamageCannotMiss = new SubAbility(true, true, 4, 0);
-            SubAbility eightDamageWithStun = new SubAbility();
+            SubAbility fourDamageCannotMiss = new SubAbility(true, true, 4, 0, subAbilityChanceToFail: 0);
+            SubAbility eightDamage = new SubAbility(true, true, 8, 0);
+            SubAbility chanceToFail = new SubAbility(true, true, 8, 0, subAbilityChanceToFail: .5);
+            SubAbility stun = new SubAbility(true, true, 0, 0, 2, SpecialConditionType.TurnLoss);
 
-            Abilities.Add(new Ability("", "", new List<SubAbility> {}));
-            Abilities.Add(new Ability("", "", new List<SubAbility> {}));
+            Abilities.Add(new Ability("Seltzer Bottle", "Does 4 damage. Cannot miss.", new List<SubAbility> {fourDamageCannotMiss}));
+            Abilities.Add(new Ability("Anvil", "50% chance to do 8 damage and stun for 2 turns.", new List<SubAbility> {eightDamage, chanceToFail, stun}));
         }
     }
 }

@@ -47,6 +47,7 @@
     <Compile Include="AppliedSpecialCondition.cs" />
     <Compile Include="BasicMonster.cs" />
     <Compile Include="BasicMonsters\BeaverX.cs" />
+    <Compile Include="BasicMonsters\Boots.cs" />
     <Compile Include="BasicMonsters\CaptainFalcon.cs" />
     <Compile Include="BasicMonsters\ChesterSourmonkey.cs" />
     <Compile Include="BasicMonsters\Draugr.cs" />
@@ -65,11 +66,14 @@
     <Compile Include="BasicMonsters\Pidgey.cs" />
     <Compile Include="BasicMonsters\Popo.cs" />
     <Compile Include="BasicMonsters\Sasquatch.cs" />
+    <Compile Include="BasicMonsters\ShadowPaw.cs" />
     <Compile Include="BasicMonsters\Slenderman.cs" />
+    <Compile Include="BasicMonsters\Spike.cs" />
     <Compile Include="BasicMonsters\Spy.cs" />
     <Compile Include="BasicMonsters\ThePointer.cs" />
     <Compile Include="BasicMonsters\ThePrincess.cs" />
     <Compile Include="BasicMonsters\Thief.cs" />
+    <Compile Include="BasicMonsters\ThiefLord.cs" />
     <Compile Include="BasicMonsters\TomNook.cs" />
     <Compile Include="BasicMonsters\Treecko.cs" />
     <Compile Include="BasicMonsters\TwilightLampshade.cs" />

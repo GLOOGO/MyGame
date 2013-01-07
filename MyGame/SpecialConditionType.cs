@@ -21,5 +21,6 @@ namespace MyGame
         Freeze,
         Burn,
         Bleed,
+        Disorient,
     }
 }
