@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82120033-4CAB-4DCC-92FB-4C25C990B966}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\Ability.cs" />
+    <Compile Include="Abilities\AppliedSpecialCondition.cs" />
+    <Compile Include="Abilities\Passive.cs" />
+    <Compile Include="Abilities\SpecialCondition.cs" />
+    <Compile Include="Abilities\SpecialConditionType.cs" />
+    <Compile Include="Abilities\Spell.cs" />
+    <Compile Include="BasicMonsters\BasicMonster.cs" />
+    <Compile Include="BasicMonsters\BeaverX.cs" />
+    <Compile Include="BasicMonsters\Boots.cs" />
+    <Compile Include="BasicMonsters\CaptainFalcon.cs" />
+    <Compile Include="BasicMonsters\ChesterSourmonkey.cs" />
+    <Compile Include="BasicMonsters\Draugr.cs" />
+    <Compile Include="BasicMonsters\DraugrDeathLord.cs" />
+    <Compile Include="BasicMonsters\DrMario.cs" />
+    <Compile Include="BasicMonsters\Falco.cs" />
+    <Compile Include="BasicMonsters\Frogger.cs" />
+    <Compile Include="BasicMonsters\Goblin.cs" />
+    <Compile Include="BasicMonsters\Grizzly.cs" />
+    <Compile Include="BasicMonsters\Hedwig.cs" />
+    <Compile Include="BasicMonsters\Imp.cs" />
+    <Compile Include="BasicMonsters\LesserDragon.cs" />
+    <Compile Include="BasicMonsters\LightArcanine.cs" />
+    <Compile Include="BasicMonsters\MayanArchers.cs" />
+    <Compile Include="BasicMonsters\Nana.cs" />
+    <Compile Include="BasicMonsters\Pidgey.cs" />
+    <Compile Include="BasicMonsters\Popo.cs" />
+    <Compile Include="BasicMonsters\Sasquatch.cs" />
+    <Compile Include="BasicMonsters\ShadowPaw.cs" />
+    <Compile Include="BasicMonsters\Slenderman.cs" />
+    <Compile Include="BasicMonsters\Slime.cs" />
+    <Compile Include="BasicMonsters\Spike.cs" />
+    <Compile Include="BasicMonsters\Spy.cs" />
+    <Compile Include="BasicMonsters\ThePointer.cs" />
+    <Compile Include="BasicMonsters\ThePrincess.cs" />
+    <Compile Include="BasicMonsters\Thief.cs" />
+    <Compile Include="BasicMonsters\ThiefLord.cs" />
+    <Compile Include="BasicMonsters\TomNook.cs" />
+    <Compile Include="BasicMonsters\Treecko.cs" />
+    <Compile Include="BasicMonsters\TwilightLampshade.cs" />
+    <Compile Include="BasicMonsters\Weaver.cs" />
+    <Compile Include="Card.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Hero.cs" />
+    <Compile Include="IPlayerInteraction.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ListExtensions.cs" />
+    <Compile Include="MagicMonsters\MagicMonster.cs" />
+    <Compile Include="MasterDecks.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
