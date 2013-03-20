@@ -42,11 +42,11 @@
             this.BattleField2 = new System.Windows.Forms.FlowLayoutPanel();
             this.BattleField4 = new System.Windows.Forms.FlowLayoutPanel();
             this.BattleField1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.CardCollectionPanel = new System.Windows.Forms.Panel();
             this.CardCollectionLabel = new System.Windows.Forms.Label();
             this.ChoosePlayersPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.CardCollectionPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // CardCollection
@@ -201,16 +201,16 @@
             this.BattleField1.Size = new System.Drawing.Size(750, 150);
             this.BattleField1.TabIndex = 1;
             // 
-            // panel2
+            // CardCollectionPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.CardCollection);
-            this.panel2.Controls.Add(this.CardCollectionLabel);
-            this.panel2.Location = new System.Drawing.Point(61, 266);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1009, 189);
-            this.panel2.TabIndex = 13;
-            this.panel2.Visible = false;
+            this.CardCollectionPanel.BackColor = System.Drawing.Color.Silver;
+            this.CardCollectionPanel.Controls.Add(this.CardCollection);
+            this.CardCollectionPanel.Controls.Add(this.CardCollectionLabel);
+            this.CardCollectionPanel.Location = new System.Drawing.Point(61, 266);
+            this.CardCollectionPanel.Name = "CardCollectionPanel";
+            this.CardCollectionPanel.Size = new System.Drawing.Size(1009, 189);
+            this.CardCollectionPanel.TabIndex = 13;
+            this.CardCollectionPanel.Visible = false;
             // 
             // CardCollectionLabel
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1125, 821);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.CardCollectionPanel);
             this.Controls.Add(this.HandButton);
             this.Controls.Add(this.DiscardButton);
             this.Controls.Add(this.EndTurnButton);
@@ -242,8 +242,8 @@
             this.ChoosePlayersPanel.ResumeLayout(false);
             this.ChoosePlayersPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.CardCollectionPanel.ResumeLayout(false);
+            this.CardCollectionPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Button EndTurnButton;
         private System.Windows.Forms.Button DiscardButton;
         private System.Windows.Forms.Button HandButton;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel CardCollectionPanel;
         private System.Windows.Forms.Label CardCollectionLabel;
     }
 }

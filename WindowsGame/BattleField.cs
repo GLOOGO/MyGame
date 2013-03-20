@@ -64,7 +64,7 @@ namespace WindowsGame
         public void DisplayHand(List<Card> hand)
         {
             DisplayCards(CardCollection, hand, true, "Hand");
-            CardCollection.Visible = true;
+            CardCollectionPanel.Visible = true;
         }
 
         public void DisplayBattleField(List<Card> battlefield)
