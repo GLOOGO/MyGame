@@ -15,7 +15,7 @@ namespace WindowsGame
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BattleField());
+            Application.Run(new GameBoard());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsGame
 {
-    partial class BattleField
+    partial class GameBoard
     {
         /// <summary>
         /// Required designer variable.
@@ -222,7 +222,7 @@
             this.CardCollectionLabel.TabIndex = 7;
             this.CardCollectionLabel.Text = "Hand";
             // 
-            // BattleField
+            // GameBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,9 +236,8 @@
             this.Controls.Add(this.BattleField4);
             this.Controls.Add(this.BattleField1);
             this.Controls.Add(this.ChoosePlayersPanel);
-            this.Name = "BattleField";
+            this.Name = "GameBoard";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.BattleField_Load);
             this.ChoosePlayersPanel.ResumeLayout(false);
             this.ChoosePlayersPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

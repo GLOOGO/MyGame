@@ -11,7 +11,7 @@ using Domain;
 
 namespace WindowsGame
 {
-    public partial class BattleField : Form, IPlayerInteraction
+    public partial class GameBoard : Form, IPlayerInteraction
     {
         private int _numberOfPlayers;
         private int _currentPlayerIndex;
@@ -21,13 +21,9 @@ namespace WindowsGame
 
         private readonly Dictionary<Player, FlowLayoutPanel> _playerBattleFields = new Dictionary<Player, FlowLayoutPanel>();
 
-        public BattleField()
+        public GameBoard()
         {
             InitializeComponent();
-        }
-
-        private void BattleField_Load(object sender, EventArgs e)
-        {
         }
 
 
@@ -137,8 +133,8 @@ namespace WindowsGame
             BattleField4.Hide();
 
             _numberOfPlayers = 2;
-            
             InitializePlayers();
+
             _playerBattleFields.Add(_players[0], BattleField1);
             _playerBattleFields.Add(_players[1], BattleField3);
             StartGame();
